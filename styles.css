@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+	--Red: hsl(0, 100%, 74%);
+	--Green: hsl(154, 59%, 51%);
+	--Blue: hsl(248, 32%, 49%);
+	--DarkBlue: hsl(249, 10%, 26%);
+	--GrayishBlue: hsl(246, 25%, 77%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 16px;
+	font-family: "Poppins", sans-serif;
+	background: var(--Red);
+	background-image: url(./images/bg-intro-mobile.png);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 3em 1em;
+}
+
+.header {
+	text-align: center;
+}
+.header h1 {
+	color: white;
+	font-weight: 700;
+	padding: 0 2em;
+}
+.header p {
+	color: rgba(255, 255, 255, 0.9);
+	font-weight: 400;
+	padding: 1em 1em;
+}
+.tryit {
+	background: var(--Blue);
+	text-align: center;
+	color: white;
+	font-weight: 600;
+	border-radius: 0.6em;
+	box-shadow: 0 9px 15px 2px rgba(0, 0, 0, 0.5);
+	margin-bottom: 2em;
+	margin-top: 3em;
+	padding: 1.3em 5em;
+}
+
+.tryit span {
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: 400;
+}
+
+.input-form {
+	background: white;
+	margin-top: 1em;
+	position: relative;
+	border-radius: 1em;
+	box-shadow: 0 9px 15px 2px rgba(0, 0, 0, 0.5);
+}
+
+.input-form form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+}
+
+.input-form input {
+	width: 80%;
+	margin-top: 2.5em;
+	padding: 1.6em 0 1em 0.8em;
+	border-color: hsla(246, 25%, 77%, 0.3);
+	border-radius: 0.4em;
+}
+
+.input-form input::placeholder {
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+div {
+	width: 100%;
+}
+
+.input-form button {
+	background: var(--Green);
+	color: rgba(255, 255, 255, 0.9);
+	padding: 1.3em 0;
+	width: 80%;
+	font-size: 1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 0.3em;
+	margin-top: 2em;
+	cursor: pointer;
+}
+
+.input-form button:hover {
+	background: hsla(154, 59%, 51%, 0.6);
+	color: rgb(255, 255, 255);
+}
+
+.input-form p {
+	font-size: 0.8rem;
+	text-align: center;
+	color: var(--GrayishBlue);
+	font-weight: 600;
+	margin: 2em;
+}
+
+.input-form p span {
+	color: var(--Red);
+}
+
+.error-icon {
+	position: absolute;
+	right: 5em;
+	display: none;
+}
+
+.error-icon.one {
+	top: 3em;
+}
+.error-icon.two {
+	top: 8.5em;
+}
+.error-icon.three {
+	top: 14em;
+}
+.error-icon.four {
+	top: 19.5em;
+}
+
+form .error-text {
+	position: absolute;
+	color: var(--Red);
+	right: 2em;
+	display: none;
+	font-style: italic;
+}
+
+.error-text.one {
+	top: 5em;
+}
+.error-text.two {
+	top: 12em;
+}
+.error-text.three {
+	top: 19em;
+}
+.error-text.four {
+	top: 26em;
+}
+
+/* JS CLASSes to feature error warnings */
+
+/* email */
+form.error-mail .error-icon.three {
+	display: block;
+}
+form.error-mail .error-text.three {
+	display: block;
+}
+form.error-mail .emailid input {
+	border: 2px solid var(--Red);
+}
+/* firstname */
+form.error-fname .error-icon.one {
+	display: block;
+}
+form.error-fname .error-text.one {
+	display: block;
+}
+form.error-fname .fname input {
+	border: 2px solid var(--Red);
+}
+
+/* lastname */
+form.error-lname .error-icon.two {
+	display: block;
+}
+form.error-lname .error-text.two {
+	display: block;
+}
+form.error-lname .lname input {
+	border: 2px solid var(--Red);
+}
+
+/* password */
+form.error-pass .error-icon.four {
+	display: block;
+}
+form.error-pass .error-text.four {
+	display: block;
+}
+form.error-pass .pass input {
+	border: 2px solid var(--Red);
+}
+
+/* footer */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	color: white;
+	margin-top: -1em;
+}
+.attribution a {
+	color: var(--DarkBlue);
+}
+
+/* Desktop Media Query */
+
+@media (min-width: 1200px) {
+	main {
+		display: flex;
+		flex-direction: row;
+	}
+
+
+	.header {
+		flex-basis: 50%;
+		flex-grow: 0;
+		align-self: center;
+		text-align: start;
+	}
+
+	.header h1 {
+		font-size: 3rem;
+		margin-left: -1.8em;
+		margin-bottom: 0.5em;
+		line-height: 3rem;
+	}
+	.header p {
+		font-size: 1.2rem;
+		margin-right: 2.1em;
+		margin-left: -0.5em;
+	}
+
+	.form-wrapper{
+		margin-top: -1.5em;
+	}
+}
